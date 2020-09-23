@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   print('Error Signing In');
                 } else {
                   print('Signed In');
-                  print(result);
+                  print(result.uid);
                 }
               },
               child: Text('Guest Login'),
