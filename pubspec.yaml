@@ -31,4 +31,7 @@ flutter:
     - family: Sacramento
       fonts:
         - asset: fonts/Sacramento-Regular.ttf
+    - family: Peddana
+      fonts:
+        - asset: fonts/Peddana-Regular.ttf
           
