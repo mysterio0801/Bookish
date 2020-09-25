@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String email = "";
   String password = "";
@@ -28,30 +29,37 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: EdgeInsets.all(10.0),
             child: Form(
+              key: _formKey,
               child: Column(
                 children: [
-                  TextField(
+                  TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.black54),
-                    onChanged: (value) {
-                      setState(() {
-                        email = value;
-                      });
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Enter a email';
+                      }
+                    },
+                    onSaved: (value) {
+                      email = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
                         hintText: 'Enter your email'),
                   ),
                   SizedBox(height: 10.0),
-                  TextField(
+                  TextFormField(
                     obscureText: true,
                     keyboardType: TextInputType.emailAddress,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.black54),
-                    onChanged: (value) {
-                      setState(() {
-                        password = value;
-                      });
+                    validator: (value) {
+                      if (value.length < 6) {
+                        return 'Weak Password. Try Again';
+                      }
+                    },
+                    onSaved: (value) {
+                      password = value;
                     },
                     decoration: kTextFieldDecoration.copyWith(
                         hintText: 'Enter your password'),
@@ -59,15 +67,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 20.0),
                   RaisedButton(
                     onPressed: () async {
-                      final user = await _auth.signInWithEmailAndPassword(
-                          email: email, password: password);
-                      try {
-                        if (user != null) {
-                          Navigator.pushNamed(context, HomeScreen.id);
+                      if (_formKey.currentState.validate()) {
+                        _formKey.currentState.save();
+                        try {
+                          final user = await _auth.signInWithEmailAndPassword(
+                              email: email, password: password);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      HomeScreen(inUser: user)));
+                          // } on FirebaseAuthException catch (e) {
+                          //   if (e.code == 'wrong_password') {
+                          //     return 'Wrong Password';
+                          //   }
+                          // }
+                        } catch (e) {
+                          print(e.toString());
+                          return null;
                         }
-                      } catch (e) {
-                        print(e.toString());
-                        return null;
                       }
                     },
                     color: Color(0xffffd1d4),

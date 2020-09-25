@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({this.inUser});
+  final UserCredential inUser;
   static String id = 'homescreen';
   @override
   _HomeScreenState createState() => _HomeScreenState();
