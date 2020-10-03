@@ -1,3 +1,4 @@
+import 'package:bookish/widgets/OurContainer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: Alignment.bottomCenter,
           child: Text(
             'Bookish',
-            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.0),
+            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.1),
           ),
         ),
-        backgroundColor: Color(0xffffd1d4),
+        backgroundColor: Color(0xfff4acb7),
         elevation: 0.0,
         actions: [
           FlatButton.icon(
@@ -40,6 +41,32 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.pop(context);
             },
           ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          SizedBox(
+            height: 40.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: OurContainer(
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "The God of Small Things",
+                    style: TextStyle(color: Colors.black, fontSize: 60.0),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: OurContainer(
+              child: Text("2", style: TextStyle(color: Colors.black)),
+            ),
+          )
         ],
       ),
     );
