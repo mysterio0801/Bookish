@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: Alignment.bottomCenter,
           child: Text(
             'Bookish',
-            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.0),
+            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.1),
           ),
         ),
         backgroundColor: Color(0xfff4acb7),
