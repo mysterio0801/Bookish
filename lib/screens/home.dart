@@ -55,8 +55,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   Text(
                     "The God of Small Things",
-                    style: TextStyle(color: Colors.black, fontSize: 60.0),
-                  )
+                    style: TextStyle(color: Colors.black, fontSize: 35.0),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "Due In:",
+                          style: TextStyle(
+                              color: Colors.grey[600], fontSize: 30.0),
+                        ),
+                        Text(
+                          " 22 days",
+                          style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  RaisedButton(
+                    child: Text("Finished"),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ),
@@ -64,7 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: OurContainer(
-              child: Text("2", style: TextStyle(color: Colors.black)),
+              child: Text(
+                "Next Book Revealed in:",
+                style: TextStyle(color: Colors.black, fontSize: 33),
+              ),
             ),
           )
         ],
