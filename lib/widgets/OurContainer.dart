@@ -7,6 +7,7 @@ class OurContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: child,
       padding: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
           color: Color(0xfffdeef1),
