@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "294050203461-j9jf2nbsv6jr4ei9n2jkj6j3kdk9aokl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bookish",
+            "certificate_hash": "6f32bce71480c81aba2f3e871aeb031a099847f9"
+          }
+        },
+        {
           "client_id": "294050203461-croc1gpbtr19ajksrvdfge5nul4orh75.apps.googleusercontent.com",
           "client_type": 3
         }
