@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import 'package:bookish/states/currentuser.dart';
 import 'package:bookish/states/root.dart';
+=======
+import 'package:bookish/widgets/OurContainer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+>>>>>>> 66f8ab44268cb8e1da6b0a46e1a9c60cd8781da1
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:bookish/utilities/ourcontainer.dart';
@@ -20,10 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.only(top: 10.0),
           child: Text(
             'Bookish',
-            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.0),
+            style: TextStyle(fontFamily: 'Peddana', fontSize: 30.1),
           ),
         ),
-        backgroundColor: Color(0xffffd1d4),
+        backgroundColor: Color(0xfff4acb7),
         elevation: 0.0,
       ),
       body: ListView(
@@ -96,6 +101,58 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          SizedBox(
+            height: 40.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: OurContainer(
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "The God of Small Things",
+                    style: TextStyle(color: Colors.black, fontSize: 35.0),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "Due In:",
+                          style: TextStyle(
+                              color: Colors.grey[600], fontSize: 30.0),
+                        ),
+                        Text(
+                          " 22 days",
+                          style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  RaisedButton(
+                    child: Text("Finished"),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: OurContainer(
+              child: Text(
+                "Next Book Revealed in:",
+                style: TextStyle(color: Colors.black, fontSize: 33),
+              ),
+            ),
+          )
         ],
       ),
     );
