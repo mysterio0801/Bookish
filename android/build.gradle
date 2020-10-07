@@ -30,3 +30,9 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// configurations.all {
+//     resolutionStrategy {
+//         force 'com.google.needed_dependency'
+//     }
+// }

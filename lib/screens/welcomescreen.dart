@@ -1,4 +1,4 @@
-import 'package:bookish/screens/loginscreen.dart';
+import 'package:bookish/states/root.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+                  Navigator.pushNamed(context, Root.id);
                 },
                 child: Text('Get Started'),
                 color: Color(0xffffd1d4),
