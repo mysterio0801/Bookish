@@ -1,6 +1,8 @@
 import 'package:bookish/states/currentuser.dart';
 import 'package:bookish/states/root.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:bookish/screens/noGroup/noGroup.dart';
 import 'package:provider/provider.dart';
 import 'package:bookish/utilities/ourcontainer.dart';
 
@@ -11,6 +13,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  void goToNoGroup(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => NoGroup()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +84,31 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 "Next Book Revealed in:",
                 style: TextStyle(color: Colors.black54, fontSize: 33),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            child: RaisedButton(
+              child: Text("Details"),
+              onPressed: () {
+                goToNoGroup(context);
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            child: RaisedButton(
+              child: Text("Logout"),
+              onPressed: () async {
+                await _auth.signOut();
+                Navigator.pop(context);
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),
