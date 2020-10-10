@@ -10,6 +10,13 @@ enum LoginType {
   google,
 }
 
+bool _passwordVisible = true;
+
+@override
+void initState() {
+  _passwordVisible = false;
+}
+
 class LoginForm extends StatefulWidget {
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -56,15 +63,18 @@ class _LoginFormState extends State<LoginForm> {
     }
   }
 
+  //google button for google signin
   Widget _googleButton() {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
         _logInUser(type: LoginType.google, context: context);
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40),
+      ),
       highlightElevation: 0,
-      borderSide: BorderSide(color: Colors.grey),
+      borderSide: BorderSide(color: Colors.grey, width: 2.0),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
@@ -78,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                 'Sign in with Google',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.grey,
+                  color: Colors.black54,
                 ),
               ),
             )
@@ -90,7 +100,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return OurContainer(
+    return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -111,11 +121,20 @@ class _LoginFormState extends State<LoginForm> {
           ),
           SizedBox(height: 20.0),
           TextFormField(
-            obscureText: true,
+            obscureText: _passwordVisible,
             controller: _passwordController,
             decoration: InputDecoration(
               hintText: 'Password',
               prefixIcon: Icon(Icons.lock_outline),
+              suffixIcon: IconButton(
+                icon: Icon(
+                    _passwordVisible ? Icons.visibility : Icons.visibility_off),
+                onPressed: () {
+                  setState(() {
+                    _passwordVisible = !_passwordVisible;
+                  });
+                },
+              ),
             ),
           ),
           SizedBox(height: 40.0),

@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bookish/screens/login/loginform.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffdeef1),
+      backgroundColor: Colors.pink[50],
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -21,17 +22,17 @@ class _LoginScreenState extends State<LoginScreen> {
               child: ListView(
             padding: EdgeInsets.all(20.0),
             children: [
-              SizedBox(height: 80.0),
+              SizedBox(height: 100.0),
               Padding(
-                padding: EdgeInsets.all(40.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
                 child: Center(
-                  child: Text(
-                    'Bookish',
-                    style: TextStyle(fontFamily: 'Sacramento', fontSize: 50.0),
+                  child: TyperAnimatedTextKit(
+                    text: ['Bookish'],
+                    textStyle:
+                        TextStyle(fontFamily: 'Sacramento', fontSize: 50.0),
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
               LoginForm(),
             ],
           ))

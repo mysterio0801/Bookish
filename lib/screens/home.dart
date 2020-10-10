@@ -90,7 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
-              child: Text("Details"),
+              child: Text(
+                "Details",
+                style: TextStyle(color: Colors.white),
+              ),
               onPressed: () {
                 goToNoGroup(context);
               },
@@ -102,22 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
-              child: Text("Logout"),
-              onPressed: () async {
-                await _auth.signOut();
-                Navigator.pop(context);
-              },
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-          SizedBox(height: 40.0),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: RaisedButton(
               child: Text(
-                "Sign Out",
+                "Log Out",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () async {
@@ -129,6 +118,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       context, Root.id, (route) => false);
                 }
               },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
           ),
         ],

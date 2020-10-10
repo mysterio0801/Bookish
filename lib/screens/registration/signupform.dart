@@ -3,6 +3,13 @@ import 'package:bookish/utilities/ourcontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+bool _passwordVisible = true;
+
+@override
+void initState() {
+  _passwordVisible = false;
+}
+
 class SignUpForm extends StatefulWidget {
   @override
   _SignUpFormState createState() => _SignUpFormState();
@@ -38,7 +45,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return OurContainer(
+    return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -67,20 +74,38 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: 20.0),
           TextFormField(
-            obscureText: true,
+            obscureText: _passwordVisible,
             controller: _passwordController,
             decoration: InputDecoration(
               hintText: 'Enter your password',
               prefixIcon: Icon(Icons.lock_outline),
+              suffixIcon: IconButton(
+                icon: Icon(
+                    _passwordVisible ? Icons.visibility : Icons.visibility_off),
+                onPressed: () {
+                  setState(() {
+                    _passwordVisible = !_passwordVisible;
+                  });
+                },
+              ),
             ),
           ),
           SizedBox(height: 20.0),
           TextFormField(
-            obscureText: true,
+            obscureText: _passwordVisible,
             controller: _confirmPasswordController,
             decoration: InputDecoration(
               hintText: 'Confirm Password',
               prefixIcon: Icon(Icons.lock_open),
+              suffixIcon: IconButton(
+                icon: Icon(
+                    _passwordVisible ? Icons.visibility : Icons.visibility_off),
+                onPressed: () {
+                  setState(() {
+                    _passwordVisible = !_passwordVisible;
+                  });
+                },
+              ),
             ),
           ),
           SizedBox(height: 40.0),
