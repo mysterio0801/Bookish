@@ -104,23 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: RaisedButton(
               child: Text("Logout"),
               onPressed: () async {
-                await _auth.signOut();
-                Navigator.pop(context);
-              },
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-          SizedBox(height: 40.0),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: RaisedButton(
-              child: Text(
-                "Sign Out",
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () async {
                 CurrentUser _currentUser =
                     Provider.of<CurrentUser>(context, listen: false);
                 String _returnString = await _currentUser.signOut();
@@ -129,7 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       context, Root.id, (route) => false);
                 }
               },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
+          ),
           ),
         ],
       ),
