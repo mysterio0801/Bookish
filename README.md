@@ -5,6 +5,10 @@ Like to read in groups? Want to make your book club activites effortless and has
 Bookish is the perfect app for you and your weird group of bookaholics.
 Let's make reading more fun and meaningful.
 
+Have a sneak peek..🙈🙈
+
+![WhatsApp Image 2020-10-10 at 11 49 27 PM (1)](https://user-images.githubusercontent.com/54456976/95663055-8bc6f980-0b59-11eb-9e40-87773649ded0.jpeg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
