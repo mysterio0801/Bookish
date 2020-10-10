@@ -7,7 +7,7 @@ Let's make reading more fun and meaningful.
 
 Have a sneak peek..🙈🙈
 
-![WhatsApp Image 2020-10-10 at 11 49 27 PM (1)](https://user-images.githubusercontent.com/54456976/95663055-8bc6f980-0b59-11eb-9e40-87773649ded0.jpeg)
+ ![WhatsApp Image 2020-10-10 at 11 49 27 PM](https://user-images.githubusercontent.com/54456976/95663107-f5470800-0b59-11eb-9afe-f72e46c67073.jpeg)
 
 ## Getting Started
 
