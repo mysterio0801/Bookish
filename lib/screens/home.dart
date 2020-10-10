@@ -105,10 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
-              child: Text(
-                "Log Out",
-                style: TextStyle(color: Colors.white),
-              ),
+              child: Text("Logout"),
               onPressed: () async {
                 CurrentUser _currentUser =
                     Provider.of<CurrentUser>(context, listen: false);

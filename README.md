@@ -1,6 +1,11 @@
-# bookish
+# Bookish
 
-A new Flutter project.
+Like to read in groups? Want to make your book club activites effortless and hasslefree?
+
+Bookish is the perfect app for you and your weird group of bookaholics.
+Let's make reading more fun and meaningful.
+
+Have a sneak peek..🙈🙈
 
 ## Getting Started
 
