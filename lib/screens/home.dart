@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bookish/states/currentuser.dart';
 import 'package:bookish/states/root.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -48,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   Text(
                     "The God of Small Things",
-                    style: TextStyle(color: Colors.black54, fontSize: 35.0),
+                    style: TextStyle(color: Colors.black54, fontSize: 30.0),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -57,13 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "Due In:",
                           style: TextStyle(
-                              color: Colors.grey[600], fontSize: 30.0),
+                              color: Colors.grey[600], fontSize: 25.0),
                         ),
                         Text(
                           " 22 days",
                           style: TextStyle(
                               color: Colors.grey[600],
-                              fontSize: 30.0,
+                              fontSize: 25.0,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -81,12 +83,26 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: OurContainer(
-              child: Text(
-                "Next Book Revealed in:",
-                style: TextStyle(color: Colors.black54, fontSize: 33),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Next Book Revealed in:",
+                      style: TextStyle(color: Colors.black54, fontSize: 28.0),
+                    ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      "22 Hours",
+                      style: TextStyle(color: Colors.black54, fontSize: 28.0, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
+          SizedBox(height: 25.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
@@ -102,10 +118,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
-              child: Text("Logout"),
+              child: Text("Logout",
+              style: TextStyle(color: Colors.white),),
               onPressed: () async {
                 CurrentUser _currentUser =
                     Provider.of<CurrentUser>(context, listen: false);
