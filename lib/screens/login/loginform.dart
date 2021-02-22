@@ -1,5 +1,6 @@
 import 'package:bookish/screens/home.dart';
 import 'package:bookish/states/currentuser.dart';
+import 'package:bookish/states/root.dart';
 import 'package:flutter/material.dart';
 import 'package:bookish/screens/registration/registrationscreen.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +49,7 @@ class _LoginFormState extends State<LoginForm> {
 
       if (_returnString == "success") {
         Navigator.pushNamedAndRemoveUntil(
-            context, HomeScreen.id, (route) => false);
+            context, Root.id, (route) => false);
       } else {
         Scaffold.of(context).showSnackBar(
           SnackBar(

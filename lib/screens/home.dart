@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: RaisedButton(
               child: Text(
-                "Details",
+                "Bookish History",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {

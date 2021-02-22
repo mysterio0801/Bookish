@@ -37,8 +37,8 @@ class CurrentUser extends ChangeNotifier {
 
     try {
       await _auth.signOut();
-      _currentUser = OurUser();
-      signOutGoogle();
+      // _currentUser = OurUser();
+      // signOutGoogle();
       retVal = "success";
     } catch (e) {
       print(e);
